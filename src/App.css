@@ -1,0 +1,302 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(var(--radius));
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Yigo Custom Colors - Paleta optimizada para contraste con nuevo logo */
+  --background: #FFFFFF;
+  --foreground: #1A202C;
+  --card: #FFFFFF;
+  --card-foreground: #1A202C;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A202C;
+  --primary: #3498DB; /* Azul más claro para el logo */
+  --primary-foreground: #FFFFFF;
+  --secondary: #2ECC71; /* Verde complementario */
+  --secondary-foreground: #1A202C;
+  --muted: #ECF0F1;
+  --muted-foreground: #7F8C8D;
+  --accent: #3498DB;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #BDC3C7;
+  --input: #FFFFFF;
+  --ring: #3498DB;
+  --chart-1: #3498DB;
+  --chart-2: #2ECC71;
+  --chart-3: #9B59B6;
+  --chart-4: #F1C40F;
+  --chart-5: #E74C3C;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A202C;
+  --sidebar-primary: #3498DB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #ECF0F1;
+  --sidebar-accent-foreground: #1A202C;
+  --sidebar-border: #BDC3C7;
+  --sidebar-ring: #3498DB;
+}
+
+.dark {
+  --background: #1A202C;
+  --foreground: #ECF0F1;
+  --card: #2C3E50;
+  --card-foreground: #ECF0F1;
+  --popover: #2C3E50;
+  --popover-foreground: #ECF0F1;
+  --primary: #3498DB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2ECC71;
+  --secondary-foreground: #ECF0F1;
+  --muted: #34495E;
+  --muted-foreground: #BDC3C7;
+  --accent: #3498DB;
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #34495E;
+  --input: #2C3E50;
+  --ring: #3498DB;
+  --chart-1: #3498DB;
+  --chart-2: #2ECC71;
+  --chart-3: #9B59B6;
+  --chart-4: #F1C40F;
+  --chart-5: #E74C3C;
+  --sidebar: #2C3E50;
+  --sidebar-foreground: #ECF0F1;
+  --sidebar-primary: #3498DB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #34495E;
+  --sidebar-accent-foreground: #ECF0F1;
+  --sidebar-border: #34495E;
+  --sidebar-ring: #3498DB;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para el gradiente de texto */
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Efectos hover personalizados */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(43, 108, 176, 0.2);
+}
+
+/* Estilos para botones CTA mejorados */
+.cta-button {
+  background: linear-gradient(135deg, #3498DB 0%, #2ECC71 100%);
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2ECC71 0%, #3498DB 100%);
+}
+
+.cta-button-secondary {
+  background: transparent;
+  border: 2px solid #3498DB;
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  color: #3498DB;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+  background: #3498DB;
+  color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+/* Estilos para el botón WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  animation: pulse-glow 3s infinite;
+  background: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Estilos para las cards */
+.feature-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(43, 108, 176, 0.2);
+  border-color: #2B6CB0;
+}
+
+/* Estilos para la sección de Yiwu */
+.yiwu-section {
+  background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+}
+
+.yiwu-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.yiwu-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cta-button {
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+  
+  .cta-button-secondary {
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+}
