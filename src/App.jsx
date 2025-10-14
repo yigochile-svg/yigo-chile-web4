@@ -122,11 +122,13 @@ function App() {
   return (
     <div className="min-h-screen bg-[#FFFFFF] text-[#1A202C] font-['Inter']">
       {/* Navigation Menu */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm border-b border-gray-200 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={yigoLogo} alt="Yigo Logo" className="h-10 w-auto" />
+              <div className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] p-2 rounded-lg">
+                <img src={yigoLogo} alt="Yigo Logo" className="h-8 w-auto" />
+              </div>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -144,6 +146,7 @@ function App() {
       {/* Hero Section */}
       <section id="inicio" className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden pt-16">
         {/* Fondo abstracto con nodos */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-75"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-3 h-3 bg-gradient-to-r from-[#2B6CB0] to-[#4FD1C7] rounded-full animate-float"></div>
           <div className="absolute top-40 right-32 w-4 h-4 bg-gradient-to-r from-[#2B6CB0] to-[#4FD1C7] rounded-full animate-float" style={{animationDelay: '1s'}}></div>
@@ -165,7 +168,7 @@ function App() {
 
         <div className="relative z-10 text-center max-w-5xl mx-auto">
           <div className="mb-12">
-            <img src={yigoLogo} alt="Yigo Logo" className="h-48 w-auto mx-auto mb-6 hover:scale-105 transition-transform duration-300" />
+            <img src={yigoLogo} alt="Yigo Logo" className="h-56 w-auto mx-auto mb-6 hover:scale-105 transition-transform duration-300" />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-12 bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent leading-tight">
             Importar desde China nunca fue tan fácil y seguro
@@ -300,14 +303,17 @@ function App() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="yiwu-image">
+              <div className="yiwu-image relative rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <img src={yiwuCity} alt="Vista aérea de Yiwu" className="w-full h-48 object-cover" />
+                <div className="absolute inset-0 bg-black opacity-20"></div>
               </div>
-              <div className="yiwu-image">
+              <div className="yiwu-image relative rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <img src={yiwuMarket1} alt="Interior del mercado de Yiwu" className="w-full h-48 object-cover" />
+                <div className="absolute inset-0 bg-black opacity-20"></div>
               </div>
-              <div className="yiwu-image col-span-2">
+              <div className="yiwu-image col-span-2 relative rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <img src={yiwuMarket2} alt="Productos en el mercado de Yiwu" className="w-full h-32 object-cover" />
+                <div className="absolute inset-0 bg-black opacity-20"></div>
               </div>
             </div>
           </div>
@@ -781,15 +787,15 @@ function App() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button 
-              className="cta-button flex items-center gap-3 text-xl px-12 py-6"
-              onClick={() => window.open('https://calendly.com/yigo-chile/30min', '_blank')}
+              className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 text-xl"
+              onClick={() => window.open(\'https://calendly.com/yigo-chile/30min\', \'_blank\')}
             >
               <Calendar className="h-6 w-6" />
               AGENDAR LLAMADA GRATUITA
             </button>
             <button 
-              className="cta-button-secondary flex items-center gap-3 text-xl px-12 py-6 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-[#0F172A]"
-              onClick={() => window.open('https://wa.me/56953956608', '_blank')}
+              className="bg-transparent border-2 border-[#2ECC71] text-[#2ECC71] font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-[#2ECC71] hover:text-white transform hover:scale-105 transition-all duration-300 flex items-center gap-3 text-xl"
+              onClick={() => window.open(\'https://wa.me/56953956608\', \'_blank\')}
             >
               <MessageCircle className="h-6 w-6" />
               HABLAR POR WHATSAPP
