@@ -119,10 +119,29 @@ function App() {
     })
   }
 
+  // Efecto de scroll para la barra de navegación
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.getElementById('navbar')
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white', 'shadow-md', 'border-b', 'border-gray-200')
+        navbar.classList.remove('bg-transparent')
+      } else {
+        navbar.classList.remove('bg-white', 'shadow-md', 'border-b', 'border-gray-200')
+        navbar.classList.add('bg-transparent')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#FFFFFF] text-[#1A202C] font-['Inter']">
       {/* Navigation Menu */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm border-b border-gray-200 shadow-md">
+      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-transparent backdrop-blur-sm" id="navbar">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
