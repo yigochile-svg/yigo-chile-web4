@@ -126,9 +126,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <div className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] p-2 rounded-lg">
-                <img src={yigoLogo} alt="Yigo Logo" className="h-8 w-auto" />
-              </div>
+              <img src={yigoLogo} alt="Yigo Logo" className="h-10 w-auto" />
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -146,7 +144,7 @@ function App() {
       {/* Hero Section */}
       <section id="inicio" className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden pt-16">
         {/* Fondo abstracto con nodos */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-75"></div>
+
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-3 h-3 bg-gradient-to-r from-[#2B6CB0] to-[#4FD1C7] rounded-full animate-float"></div>
           <div className="absolute top-40 right-32 w-4 h-4 bg-gradient-to-r from-[#2B6CB0] to-[#4FD1C7] rounded-full animate-float" style={{animationDelay: '1s'}}></div>
@@ -170,10 +168,12 @@ function App() {
           <div className="mb-12">
             <img src={yigoLogo} alt="Yigo Logo" className="h-56 w-auto mx-auto mb-6 hover:scale-105 transition-transform duration-300" />
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold mb-12 bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent leading-tight">
-            Importar desde China nunca fue tan fácil y seguro
+          <h1 className="text-6xl md:text-8xl font-bold mb-12 leading-tight">
+            <span className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent">Importar desde China nunca</span>
+            <br />
+            <span className="text-[#1A202C]">fue tan fácil y seguro</span>
           </h1>
-          <p className="text-2xl md:text-3xl text-[#4A5568] mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p className="text-2xl md:text-3xl text-[#1A202C] mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
             Somos Yigo, tu socio en Yiwu; capital mundial del comercio mayorista. 
             Nos encargamos de todo el proceso puerta a puerta. Calcula tu costo al instante y da el salto que tu negocio necesita.
           </p>
@@ -788,14 +788,14 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button 
               className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-3 text-xl"
-              onClick={() => window.open(\'https://calendly.com/yigo-chile/30min\', \'_blank\')}
+              onClick={() => window.open('https://calendly.com/yigo-chile/30min', '_blank')}
             >
               <Calendar className="h-6 w-6" />
               AGENDAR LLAMADA GRATUITA
             </button>
             <button 
               className="bg-transparent border-2 border-[#2ECC71] text-[#2ECC71] font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-[#2ECC71] hover:text-white transform hover:scale-105 transition-all duration-300 flex items-center gap-3 text-xl"
-              onClick={() => window.open(\'https://wa.me/56953956608\', \'_blank\')}
+              onClick={() => window.open('https://wa.me/56953956608', '_blank')}
             >
               <MessageCircle className="h-6 w-6" />
               HABLAR POR WHATSAPP
