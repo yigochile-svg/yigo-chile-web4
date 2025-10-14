@@ -361,6 +361,28 @@ function App() {
             </p>
           </div>
 
+          {/* Tarifa de Yigo destacada */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <Card className="bg-gradient-to-r from-[#3498DB] via-[#2ECC71] to-[#3498DB] border-4 border-[#2ECC71] shadow-2xl">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <h3 className="text-3xl font-bold text-white mb-4">🚢 TARIFA DE FLETE MARÍTIMO YIGO</h3>
+                  <div className="flex items-center justify-center gap-8 mb-4">
+                    <div className="text-white">
+                      <p className="text-lg line-through opacity-75">Precio regular: $249 USD/m³</p>
+                    </div>
+                    <div className="bg-white rounded-2xl px-8 py-4 transform scale-110 shadow-xl">
+                      <p className="text-5xl md:text-7xl font-black text-[#2ECC71]">$199</p>
+                      <p className="text-2xl font-bold text-[#3498DB]">USD/m³</p>
+                    </div>
+                  </div>
+                  <p className="text-xl text-white font-semibold">✨ ¡OFERTA ESPECIAL! ✨</p>
+                  <p className="text-lg text-white mt-2">Desde 1 m³ | Incluye flete marítimo, gestión de aduanas, almacenaje en puerto y transporte terrestre</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           <Card className="bg-[#0F172A] border-[#3B82F6] max-w-4xl mx-auto">
             <CardHeader>
               <CardTitle className="text-2xl text-[#F8FAFC] flex items-center justify-center gap-3">
@@ -421,15 +443,18 @@ function App() {
                     </div>
                   </div>
                   
-                  <div className="bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6] p-8 rounded-2xl border-4 border-[#3B82F6] animate-pulse-glow">
+                  <div className="bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6] p-8 rounded-2xl border-4 border-[#3B82F6]">
                     <div className="flex items-center justify-center gap-3 mb-4">
                       <Target className="h-12 w-12 text-[#0F172A]" />
                       <h3 className="text-[#0F172A] text-2xl font-bold">
-                        ¡ESTE ES TU COSTO UNITARIO EN TU BODEGA EN CHILE!
+                        COSTO UNITARIO ESTIMADO EN CHILE (Referencial)
                       </h3>
                     </div>
-                    <p className="text-[#0F172A] text-5xl font-black">
+                    <p className="text-[#0F172A] text-5xl font-black mb-2">
                       ${unitCostInChile.toFixed(2)} USD por unidad
+                    </p>
+                    <p className="text-[#0F172A] text-sm font-medium italic">
+                      *Este cálculo es una herramienta de ayuda para planificar tu inversión
                     </p>
                   </div>
                 </div>
@@ -544,19 +569,22 @@ function App() {
                 icon: <Search className="h-16 w-16" />,
                 title: "Búsqueda de Productos",
                 description: "¿Tienes una idea pero no el producto? Lo buscamos por ti en el mercado de Yiwu usando nuestra red de contactos locales.",
-                features: ["Búsqueda personalizada", "Comparación de precios", "Verificación de calidad"]
+                features: ["Búsqueda personalizada", "Comparación de precios", "Verificación de calidad"],
+                pricing: "Tarifas a consultar"
               },
               {
                 icon: <Users className="h-16 w-16" />,
                 title: "Búsqueda de Proveedores",
                 description: "¿Necesitas una fábrica específica? Encontramos y verificamos al proveedor ideal para tu negocio.",
-                features: ["Verificación de fábrica", "Negociación de precios", "Control de calidad"]
+                features: ["Verificación de fábrica", "Negociación de precios", "Control de calidad"],
+                pricing: "Tarifas a consultar"
               },
               {
                 icon: <Shield className="h-16 w-16" />,
                 title: "Inspección de Calidad",
                 description: "Nos aseguramos de que tu producción cumpla con tus estándares de calidad antes de ser enviada.",
-                features: ["Inspección pre-envío", "Reporte fotográfico", "Garantía de calidad"]
+                features: ["Inspección pre-envío", "Reporte fotográfico", "Garantía de calidad"],
+                pricing: "Tarifas a consultar"
               }
             ].map((service, index) => (
               <Card key={index} className="feature-card">
@@ -580,6 +608,11 @@ function App() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <p className="text-center text-lg font-bold text-[#3498DB]">
+                      💵 {service.pricing}
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -648,6 +681,89 @@ function App() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Formulario de Contacto */}
+      <section id="contacto" className="py-24 px-4 bg-[#F7FAFC]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <MessageCircle className="h-16 w-16 text-[#3498DB] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A202C]">
+              ¿Tienes alguna consulta?
+            </h2>
+            <p className="text-xl text-[#4A5568] max-w-3xl mx-auto font-medium">
+              Completa el formulario y te contactaremos por WhatsApp de inmediato
+            </p>
+          </div>
+
+          <Card className="shadow-2xl border-2 border-[#3498DB]">
+            <CardContent className="p-8">
+              <form onSubmit={(e) => {
+                e.preventDefault()
+                const formData = new FormData(e.target)
+                const nombre = formData.get('nombre')
+                const email = formData.get('email')
+                const telefono = formData.get('telefono')
+                const mensaje = formData.get('mensaje')
+                
+                const whatsappMessage = `Hola Yigo! Mi nombre es ${nombre}.%0A%0A📧 Email: ${email}%0A📞 Teléfono: ${telefono}%0A%0A💬 Consulta:%0A${mensaje}`
+                
+                window.open(`https://wa.me/56953956608?text=${whatsappMessage}`, '_blank')
+              }}>
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-2">
+                    <label className="text-[#1A202C] font-semibold">Nombre completo *</label>
+                    <Input
+                      type="text"
+                      name="nombre"
+                      placeholder="Ej: Juan Pérez"
+                      required
+                      className="border-[#3498DB] text-lg py-3"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[#1A202C] font-semibold">Email *</label>
+                    <Input
+                      type="email"
+                      name="email"
+                      placeholder="Ej: juan@ejemplo.cl"
+                      required
+                      className="border-[#3498DB] text-lg py-3"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2 mb-6">
+                  <label className="text-[#1A202C] font-semibold">Teléfono *</label>
+                  <Input
+                    type="tel"
+                    name="telefono"
+                    placeholder="Ej: +56 9 1234 5678"
+                    required
+                    className="border-[#3498DB] text-lg py-3"
+                  />
+                </div>
+                <div className="space-y-2 mb-8">
+                  <label className="text-[#1A202C] font-semibold">Mensaje *</label>
+                  <textarea
+                    name="mensaje"
+                    placeholder="Cuéntanos sobre tu proyecto de importación..."
+                    required
+                    rows="5"
+                    className="w-full border-2 border-[#3498DB] rounded-lg p-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#2ECC71]"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-xl py-6 flex items-center justify-center gap-3"
+                >
+                  <MessageCircle className="h-6 w-6" />
+                  Enviar consulta por WhatsApp
+                  <ArrowRight className="h-6 w-6" />
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
