@@ -168,7 +168,7 @@ function App() {
             <img src={yigoLogo} alt="Yigo Logo" className="h-48 w-auto mx-auto mb-6 hover:scale-105 transition-transform duration-300" />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-12 bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent leading-tight">
-            Importar desde China nunca fue tan fácil y <span className="block mt-4">seguro</span>
+            Importar desde China nunca fue tan fácil y seguro
           </h1>
           <p className="text-2xl md:text-3xl text-[#4A5568] mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
             Somos Yigo, tu socio en Yiwu; capital mundial del comercio mayorista. 
@@ -663,10 +663,10 @@ function App() {
                       <Star key={i} className="h-6 w-6 fill-[#3B82F6] text-[#3B82F6]" />
                     ))}
                   </div>
-                  <CardTitle className="text-[#F8FAFC] text-xl">
+                  <CardTitle className="text-[#1A202C] text-xl font-bold">
                     {testimonial.name}
                   </CardTitle>
-                  <CardDescription className="text-[#3B82F6] font-semibold">
+                  <CardDescription className="text-[#3498DB] font-bold text-lg">
                     {testimonial.company}
                   </CardDescription>
                   <div className="bg-[#3B82F6] text-[#F8FAFC] px-3 py-1 rounded-full text-sm font-semibold inline-block">
@@ -674,8 +674,8 @@ function App() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#94A3B8] leading-relaxed">
-                    "${testimonial.testimonial}"
+                  <p className="text-[#2D3748] leading-relaxed font-medium">
+                    "{testimonial.testimonial}"
                   </p>
                 </CardContent>
               </Card>
@@ -773,10 +773,10 @@ function App() {
           <div className="mb-8">
             <Sparkles className="h-20 w-20 text-[#3B82F6] mx-auto mb-6 animate-pulse" />
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-white">
             ¿Listo para llevar tu negocio al siguiente nivel?
           </h2>
-          <p className="text-2xl text-[#94A3B8] mb-12 max-w-3xl mx-auto">
+          <p className="text-2xl text-[#E2E8F0] mb-12 max-w-3xl mx-auto">
             Agenda una llamada gratuita de 30 minutos sin compromiso o escríbenos por WhatsApp para comenzar tu importación hoy mismo.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
