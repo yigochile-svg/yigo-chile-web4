@@ -126,7 +126,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={yigoLogo} alt="Yigo Logo" className="h-12 w-auto" />
+              <img src={yigoLogo} alt="Yigo Logo" className="h-10 w-auto" />
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -165,17 +165,16 @@ function App() {
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto">
-          <div className="mb-12">
-            <img src={yigoLogo} alt="Yigo Logo" className="h-64 w-auto mx-auto mb-6 hover:scale-105 transition-transform duration-300" />
+          <div className="mb-8">
+            <img src={yigoLogo} alt="Yigo Logo" className="h-20 w-auto mx-auto hover:scale-105 transition-transform duration-300" />
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold mb-12 leading-tight">
-            <span className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent">Importar desde China nunca</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent">Importar desde China</span>
             <br />
-            <span className="text-[#1A202C]">fue tan fácil y seguro</span>
+            <span className="text-[#1A202C]">nunca fue tan fácil y seguro</span>
           </h1>
-          <p className="text-2xl md:text-3xl text-[#1A202C] mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
-            Somos Yigo, tu socio en Yiwu; capital mundial del comercio mayorista. 
-            Nos encargamos de todo el proceso puerta a puerta. Calcula tu costo al instante y da el salto que tu negocio necesita.
+          <p className="text-xl md:text-2xl text-[#4A5568] mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+            Somos Yigo, tu socio para importar desde Yiwu. Hacemos el proceso puerta a puerta para que des el salto que tu negocio necesita.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button 
@@ -814,9 +813,9 @@ function App() {
       <footer className="bg-[#0F172A] py-16 px-4 border-t border-[#334155]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] bg-clip-text text-transparent mb-4">
-              Yigo.cl
-            </h3>
+            <a href="#inicio" className="inline-block mb-4">
+              <img src={yigoLogo} alt="Yigo Logo" className="h-16 w-auto mx-auto hover:scale-105 transition-transform duration-300" />
+            </a>
             <p className="text-[#94A3B8] text-lg">
               Tu socio confiable para importar desde China
             </p>
