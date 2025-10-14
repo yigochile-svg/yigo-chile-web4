@@ -145,7 +145,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={yigoLogo} alt="Yigo Logo" className="h-10 w-auto" />
+              <img src={yigoLogo} alt="Yigo Logo" className="h-14 w-auto" />
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -184,8 +184,8 @@ function App() {
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto">
-          <div className="mb-8">
-            <img src={yigoLogo} alt="Yigo Logo" className="h-20 w-auto mx-auto hover:scale-105 transition-transform duration-300" />
+          <div className="mb-12">
+            <img src={yigoLogo} alt="Yigo Logo" className="h-40 w-auto mx-auto hover:scale-105 transition-transform duration-300" />
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent">Importar desde China</span>
@@ -459,32 +459,40 @@ function App() {
 
               {(volume || unitCost || quantity) && (
                 <div className="space-y-6">
-                  <div className="bg-[#334155] p-6 rounded-xl">
-                    <h3 className="text-[#3B82F6] text-xl font-bold mb-4">Desglose de Costos</h3>
+                  {/* Costo de Servicio Yigo - DESTACADO */}
+                  <div className="bg-gradient-to-br from-[#3498DB] via-[#2ECC71] to-[#3498DB] p-8 rounded-2xl shadow-2xl border-4 border-white">
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                      <Ship className="h-12 w-12 text-white" />
+                      <h3 className="text-white text-3xl font-black uppercase tracking-wide">
+                        COSTO DE SERVICIO YIGO
+                      </h3>
+                    </div>
+                    <div className="bg-white rounded-2xl p-6 mb-4">
+                      <p className="text-6xl md:text-8xl font-black text-[#2ECC71] text-center mb-2">
+                        ${cost.toFixed(2)}
+                      </p>
+                      <p className="text-2xl font-bold text-[#3498DB] text-center">USD</p>
+                    </div>
+                    <p className="text-white text-center text-lg font-semibold">
+                      Tarifa especial: $199 USD/m³ | Volumen: {parseFloat(volume) || 0} m³
+                    </p>
+                  </div>
+
+                  {/* Información Referencial para el Cliente */}
+                  <div className="bg-[#334155] p-6 rounded-xl border-2 border-[#94A3B8]">
+                    <h3 className="text-[#94A3B8] text-lg font-bold mb-4 uppercase tracking-wide">Información Referencial (No incluida en el servicio Yigo)</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="flex justify-between">
                         <span className="text-[#94A3B8]">Costo de productos:</span>
                         <span className="text-[#F8FAFC] font-semibold">${((parseFloat(unitCost) || 0) * (parseFloat(quantity) || 0)).toFixed(2)} USD</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[#94A3B8]">Costo de envío:</span>
-                        <span className="text-[#F8FAFC] font-semibold">${cost.toFixed(2)} USD</span>
+                        <span className="text-[#94A3B8]">Costo unitario estimado en Chile:</span>
+                        <span className="text-[#F8FAFC] font-semibold">${unitCostInChile.toFixed(2)} USD/unidad</span>
                       </div>
                     </div>
-                  </div>
-                  
-                  <div className="bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#3B82F6] p-8 rounded-2xl border-4 border-[#3B82F6]">
-                    <div className="flex items-center justify-center gap-3 mb-4">
-                      <Target className="h-12 w-12 text-[#0F172A]" />
-                      <h3 className="text-[#0F172A] text-2xl font-bold">
-                        COSTO UNITARIO ESTIMADO EN CHILE (Referencial)
-                      </h3>
-                    </div>
-                    <p className="text-[#0F172A] text-5xl font-black mb-2">
-                      ${unitCostInChile.toFixed(2)} USD por unidad
-                    </p>
-                    <p className="text-[#0F172A] text-sm font-medium italic">
-                      *Este cálculo es una herramienta de ayuda para planificar tu inversión
+                    <p className="text-[#94A3B8] text-xs mt-4 italic">
+                      *Estos cálculos son estimaciones para ayudarte a planificar tu inversión. Yigo no se hace cargo de estos valores.
                     </p>
                   </div>
                 </div>
@@ -715,19 +723,19 @@ function App() {
       </section>
 
       {/* Formulario de Contacto */}
-      <section id="contacto" className="py-24 px-4 bg-[#F7FAFC]">
+      <section id="contacto" className="py-24 px-4 bg-gradient-to-br from-[#F8FAFC] to-[#E2E8F0]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <MessageCircle className="h-16 w-16 text-[#3498DB] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A202C]">
+          <div className="text-center mb-12">
+            <MessageCircle className="h-12 w-12 text-[#3498DB] mx-auto mb-4" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1A202C]">
               ¿Tienes alguna consulta?
             </h2>
-            <p className="text-xl text-[#4A5568] max-w-3xl mx-auto font-medium">
+            <p className="text-lg text-[#64748B] max-w-2xl mx-auto">
               Completa el formulario y te contactaremos por WhatsApp de inmediato
             </p>
           </div>
 
-          <Card className="shadow-2xl border-2 border-[#3498DB]">
+          <Card className="shadow-lg border border-[#CBD5E1] bg-white/80 backdrop-blur-sm">
             <CardContent className="p-8">
               <form onSubmit={(e) => {
                 e.preventDefault()
@@ -743,49 +751,49 @@ function App() {
               }}>
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-2">
-                    <label className="text-[#1A202C] font-semibold">Nombre completo *</label>
+                    <label className="text-[#475569] text-sm font-medium">Nombre completo *</label>
                     <Input
                       type="text"
                       name="nombre"
                       placeholder="Ej: Juan Pérez"
                       required
-                      className="border-[#3498DB] text-lg py-3"
+                      className="border-[#CBD5E1] focus:border-[#3498DB] text-base py-3 transition-all duration-200"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[#1A202C] font-semibold">Email *</label>
+                    <label className="text-[#475569] text-sm font-medium">Email *</label>
                     <Input
                       type="email"
                       name="email"
                       placeholder="Ej: juan@ejemplo.cl"
                       required
-                      className="border-[#3498DB] text-lg py-3"
+                      className="border-[#CBD5E1] focus:border-[#3498DB] text-base py-3 transition-all duration-200"
                     />
                   </div>
                 </div>
                 <div className="space-y-2 mb-6">
-                  <label className="text-[#1A202C] font-semibold">Teléfono *</label>
+                  <label className="text-[#475569] text-sm font-medium">Teléfono *</label>
                   <Input
                     type="tel"
                     name="telefono"
                     placeholder="Ej: +56 9 1234 5678"
                     required
-                    className="border-[#3498DB] text-lg py-3"
+                    className="border-[#CBD5E1] focus:border-[#3498DB] text-base py-3 transition-all duration-200"
                   />
                 </div>
                 <div className="space-y-2 mb-8">
-                  <label className="text-[#1A202C] font-semibold">Mensaje *</label>
+                  <label className="text-[#475569] text-sm font-medium">Mensaje *</label>
                   <textarea
                     name="mensaje"
                     placeholder="Cuéntanos sobre tu proyecto de importación..."
                     required
                     rows="5"
-                    className="w-full border-2 border-[#3498DB] rounded-lg p-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#2ECC71]"
+                    className="w-full border border-[#CBD5E1] rounded-lg p-4 text-base focus:outline-none focus:border-[#3498DB] focus:ring-1 focus:ring-[#3498DB] transition-all duration-200"
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-xl py-6 flex items-center justify-center gap-3"
+                  className="w-full bg-gradient-to-r from-[#25D366] to-[#20BA5A] hover:from-[#20BA5A] hover:to-[#1CA350] text-white text-lg py-6 flex items-center justify-center gap-3 shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   <MessageCircle className="h-6 w-6" />
                   Enviar consulta por WhatsApp
@@ -833,7 +841,7 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <a href="#inicio" className="inline-block mb-4">
-              <img src={yigoLogo} alt="Yigo Logo" className="h-16 w-auto mx-auto hover:scale-105 transition-transform duration-300" />
+              <img src={yigoLogo} alt="Yigo Logo" className="h-24 w-auto mx-auto hover:scale-105 transition-transform duration-300" />
             </a>
             <p className="text-[#94A3B8] text-lg">
               Tu socio confiable para importar desde China
