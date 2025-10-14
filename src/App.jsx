@@ -126,7 +126,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img src={yigoLogo} alt="Yigo Logo" className="h-10 w-auto" />
+              <img src={yigoLogo} alt="Yigo Logo" className="h-12 w-auto" />
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
@@ -166,7 +166,7 @@ function App() {
 
         <div className="relative z-10 text-center max-w-5xl mx-auto">
           <div className="mb-12">
-            <img src={yigoLogo} alt="Yigo Logo" className="h-56 w-auto mx-auto mb-6 hover:scale-105 transition-transform duration-300" />
+            <img src={yigoLogo} alt="Yigo Logo" className="h-64 w-auto mx-auto mb-6 hover:scale-105 transition-transform duration-300" />
           </div>
           <h1 className="text-6xl md:text-8xl font-bold mb-12 leading-tight">
             <span className="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] bg-clip-text text-transparent">Importar desde China nunca</span>
@@ -302,20 +302,26 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="yiwu-image relative rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <img src={yiwuCity} alt="Vista aérea de Yiwu" className="w-full h-48 object-cover" />
-                <div className="absolute inset-0 bg-black opacity-20"></div>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="relative rounded-xl overflow-hidden shadow-lg group">
+                  <img src={yiwuCity} alt="Vista aérea de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white text-xl font-bold">Vista aérea de Yiwu</p>
+                  </div>
+                </div>
+                <div className="relative rounded-xl overflow-hidden shadow-lg group">
+                  <img src={yiwuMarket1} alt="Interior del mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white text-xl font-bold">Interior del mercado de Yiwu</p>
+                  </div>
+                </div>
+                <div className="relative rounded-xl overflow-hidden shadow-lg group">
+                  <img src={yiwuMarket2} alt="Productos en el mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white text-xl font-bold">Productos en el mercado de Yiwu</p>
+                  </div>
+                </div>
               </div>
-              <div className="yiwu-image relative rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <img src={yiwuMarket1} alt="Interior del mercado de Yiwu" className="w-full h-48 object-cover" />
-                <div className="absolute inset-0 bg-black opacity-20"></div>
-              </div>
-              <div className="yiwu-image col-span-2 relative rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <img src={yiwuMarket2} alt="Productos en el mercado de Yiwu" className="w-full h-32 object-cover" />
-                <div className="absolute inset-0 bg-black opacity-20"></div>
-              </div>
-            </div>
           </div>
 
           <div className="mb-16">
