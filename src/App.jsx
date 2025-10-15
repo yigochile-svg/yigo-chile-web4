@@ -33,10 +33,11 @@ import {
   Palette,
   Wrench
 } from 'lucide-react'
-import yiwuMarket1 from './assets/yiwu-market-1.jpg'
-import yiwuMarket2 from './assets/yiwu-market-2.jpg'
-import yiwuMarket3 from './assets/yiwu-market-3.png'
-import yiwuCity from './assets/yiwu-city.jpg'
+// Imágenes de Yiwu movidas a la carpeta public para rutas absolutas
+// import yiwuMarket1 from './assets/yiwu-market-1.jpg'
+// import yiwuMarket2 from './assets/yiwu-market-2.jpg'
+// import yiwuMarket3 from './assets/yiwu-market-3.png'
+// import yiwuCity from './assets/yiwu-city.jpg'
 import yigoLogo from './assets/yigo-logo.png'
 import './App.css'
 
@@ -322,19 +323,19 @@ function App() {
             </div>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="relative rounded-xl overflow-hidden shadow-lg group">
-                  <img src={yiwuCity} alt="Vista aérea de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <img src="/yiwu-city.jpg" alt="Vista aérea de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white text-xl font-bold">Vista aérea de Yiwu</p>
                   </div>
                 </div>
                 <div className="relative rounded-xl overflow-hidden shadow-lg group">
-                  <img src={yiwuMarket1} alt="Interior del mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <img src="/yiwu-market-1.jpg" alt="Interior del mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white text-xl font-bold">Interior del mercado de Yiwu</p>
                   </div>
                 </div>
                 <div className="relative rounded-xl overflow-hidden shadow-lg group">
-                  <img src={yiwuMarket2} alt="Productos en el mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <img src="/yiwu-market-2.jpg" alt="Productos en el mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white text-xl font-bold">Productos en el mercado de Yiwu</p>
                   </div>
