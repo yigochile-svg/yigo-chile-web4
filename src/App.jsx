@@ -323,19 +323,19 @@ function App() {
             </div>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="relative rounded-xl overflow-hidden shadow-lg group">
-                  <img src="/yiwu-city.jpg" alt="Vista aérea de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <img src="/yiwu-city-new.webp" alt="Vista aérea de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white text-xl font-bold">Vista aérea de Yiwu</p>
                   </div>
                 </div>
                 <div className="relative rounded-xl overflow-hidden shadow-lg group">
-                  <img src="/yiwu-market-1.jpg" alt="Interior del mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <img src="/yiwu-market-interior-new.jpg" alt="Interior del mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white text-xl font-bold">Interior del mercado de Yiwu</p>
                   </div>
                 </div>
                 <div className="relative rounded-xl overflow-hidden shadow-lg group">
-                  <img src="/yiwu-market-2.jpg" alt="Productos en el mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                  <img src="/yiwu-products-new.jpg" alt="Productos en el mercado de Yiwu" className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p className="text-white text-xl font-bold">Productos en el mercado de Yiwu</p>
                   </div>
@@ -665,10 +665,10 @@ function App() {
           <div className="text-center mb-16">
             <Star className="h-16 w-16 text-[#3B82F6] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Emprendedores que ya dieron el salto con Yigo
+           ## Emprendedores que ya confían en Yigo
             </h2>
             <p className="text-xl text-[#94A3B8]">
-              Historias reales de éxito en importación desde China
+              Algunos de nuestros primeros clientes que ya están importando con nosotros.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
