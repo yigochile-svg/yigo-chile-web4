@@ -31,7 +31,8 @@ import {
   Home,
   Gamepad2,
   Palette,
-  Wrench
+  Wrench,
+  Ship
 } from 'lucide-react'
 // Imágenes de Yiwu movidas a la carpeta public para rutas absolutas
 // import yiwuMarket1 from './assets/yiwu-market-1.jpg'
@@ -470,7 +471,7 @@ function App() {
                     </div>
                     <div className="bg-white rounded-2xl p-6 mb-4">
                       <p className="text-6xl md:text-8xl font-black text-[#2ECC71] text-center mb-2">
-                        ${cost.toFixed(2)}
+                        ${(cost || 0).toFixed(2)}
                       </p>
                       <p className="text-2xl font-bold text-[#3498DB] text-center">USD</p>
                     </div>
@@ -489,7 +490,7 @@ function App() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-[#94A3B8]">Costo unitario estimado en Chile:</span>
-                        <span className="text-[#F8FAFC] font-semibold">${unitCostInChile.toFixed(2)} USD/unidad</span>
+                        <span className="text-[#F8FAFC] font-semibold">${(unitCostInChile || 0).toFixed(2)} USD/unidad</span>
                       </div>
                     </div>
                     <p className="text-[#94A3B8] text-xs mt-4 italic">
@@ -665,7 +666,7 @@ function App() {
           <div className="text-center mb-16">
             <Star className="h-16 w-16 text-[#3B82F6] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-           ## Emprendedores que ya confían en Yigo
+              Emprendedores que ya confían en Yigo
             </h2>
             <p className="text-xl text-[#94A3B8]">
               Algunos de nuestros primeros clientes que ya están importando con nosotros.
